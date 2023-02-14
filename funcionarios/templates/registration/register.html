@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'assets/logo/AllFin - Trabalho Neto 7.png' %}">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+            <div class ="tela">
+            <div class = "form">
+        
+        <span class="title">Register</span>
+
+        <div class = usuario>    
+            <label for="usuario"><h2>Usuário</h2></label>
+            <input id = "usuario" type="text" name="usuario" placeholder="digite seu nome de usuario" autocomplete="False">
+            
+        </div>   
+        <div class = "email" >    
+            <label for="email"><h2>E-mail</h2></label>
+            <input id = "email" type="email" name="email" placeholder="digite seu email">
+            <i class="uil uil-envelope icon"></i>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw"></i>
+            
+        </div>
+          
+        <div class = "senha" >    
+            <label for="password"><h2>Senha</h2></label>
+            <input id = "password" type="password" name="senha" placeholder="digite sua senha">
+            </div>
+            <input type = "submit" value = "Registrar">
+            <p>Já tem uma conta? <a href="#">Fazer login</a></p>
+        </form>
+    </div>
+    </div>    
+        
+    </body>
+    </html>
