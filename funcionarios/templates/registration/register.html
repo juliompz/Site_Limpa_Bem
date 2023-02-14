@@ -18,6 +18,18 @@
         
         <span class="title">Register</span>
 
+
+        <div class = usuario>    
+
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required name="cargo">
+                <option value="" disabled selected>SELECIONE O CARGO</option>
+                <option value="Atendente">Atendente</option>
+                <option value="Helper">Helper</option>
+              </select>
+            
+        </div>
+
+
         <div class = usuario>    
             <label for="usuario"><h2>Usuário</h2></label>
             <input id = "usuario" type="text" name="usuario" placeholder="digite seu nome de usuario" autocomplete="False">
@@ -25,7 +37,7 @@
         </div>   
         <div class = "email" >    
             <label for="email"><h2>E-mail</h2></label>
-            <input id = "email" type="email" name="email" placeholder="digite seu email">
+            <input id = "email" type="email" name="email" placeholder="email">
             <i class="uil uil-envelope icon"></i>
             <i class="uil uil-lock icon"></i>
             <i class="uil uil-eye-slash showHidePw"></i>
@@ -34,10 +46,9 @@
           
         <div class = "senha" >    
             <label for="password"><h2>Senha</h2></label>
-            <input id = "password" type="password" name="senha" placeholder="digite sua senha">
+            <input id = "password" type="password" name="senha" placeholder="senha">
             </div>
             <input type = "submit" value = "Registrar">
-            <p>Já tem uma conta? <a href="#">Fazer login</a></p>
         </form>
     </div>
     </div>    
