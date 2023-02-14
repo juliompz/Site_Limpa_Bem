@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'servicos',
     'atendimentos',
     'clientes',
-    'Estilizacao',
+    'estilizacao',
     'funcionarios',
 ]
 
@@ -117,6 +117,10 @@ STATIC_URL = 'static/'
 SATICFILES_URL = [os.path.join(BASE_DIR, 'static/css')]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/css')
+
+
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

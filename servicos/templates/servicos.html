@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Serviços{% endblock %}
+{% block content %}
+
+    <div class="title">
+        <h1>Serviços</h1>
+
+        {% for servicos in servico %}
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{ servicos.nome }}</h5>
+                  {% if request.user.is_superuser %}
+                  <a href="{% url 'url_excluir-servico' servicos.id %}"><button class="fas fa-edit"> apagar</button></a>
+                  <a href="{% url 'url_editar-servico' servicos.id %}"><button class="fas fa-edit"> editar</button></a>
+                  {% endif %}
+                  <span><a href="#"><i class="fas fa-trash"></i></a></span>
+                  <p class="card-text">{{ servicos.descricao }}</p>
+                  <h5 class="card-title">R${{ servicos.valor }}</h5>
+                  <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+              </div>
+            </div>
+     {% endfor %}
+
+     {% if request.user.is_superuser %}
+
+     <a href="adicionar-servico/"><button type="button" class="btn btn-secondary">Adicionar Serviço</button></a>
+
+
+     {% endif %}
+
+{% endblock %}
+
