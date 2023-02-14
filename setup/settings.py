@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'servicos',
     'atendimentos',
     'clientes',
-    'Estilizacao',
+    'estilizacao',
     'funcionarios',
 ]
 
