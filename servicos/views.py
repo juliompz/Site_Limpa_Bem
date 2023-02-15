@@ -7,7 +7,7 @@ from .forms import ServicoForm
 
 
 # Listar os serviços disponíveis
-def Servicos(request):
+def verServicos(request):
 
     data = {}
     servico = Servico.objects.all()
@@ -27,15 +27,6 @@ def AdicionarServico(request):
 
     return render(request, 'formularioservico.html', data)
 
-# Excluir Serviços
-def ExcluirServico(request, id):
-
-    servico = Servico.objects.get(pk = id)
-    servico.delete()
-    messages.info(request, 'Tarefa deletada com sucesso!')
-
-    return redirect('url_servico')
-
 #Editar serviço
 
 def EditarServico(request, id):
@@ -49,4 +40,16 @@ def EditarServico(request, id):
     data['servicoForm'] = servicoForm
     data['servico'] = servico
     return render(request, 'formularioservico.html', data)
+
+
+# Excluir Serviços
+def ExcluirServico(request, id):
+
+    servico = Servico.objects.get(pk = id)
+    servico.delete()
+    messages.info(request, 'Tarefa deletada com sucesso!')
+
+    return redirect('url_servico')
+
+
 

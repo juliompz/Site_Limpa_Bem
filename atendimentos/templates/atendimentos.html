@@ -3,6 +3,19 @@
 
 {% block content %}
 
-    <h1>Bootstrap</h1>
+    {% for atendimentos in atendimento %}
+    
+    <div class="atendimento">
+    <p>atendimento CLIENTE: {{ atendimentos.cliente.nome}}</p>
+    <p>ATENDENTE: {{atendimentos.atendente}}</p>
+    <p>HELPER: {{atendimentos.helper}}</p>
+    <p>VALOR:{{atendimentos.servico.valor}}</p>
+    <p>Desconto 10%: {{atendimentos.get_gerente_desc_display}}</p>
+    <p>VALOR com desconto:{{atendimentos.valor}}</p>
+    <p>Forma de pagamento: {{ atendimentos.get_formapgto_display }}</p>
+    <p>Situação: {{ atendimentos.get_situacao_display }}</p>
+    
+    {% endfor%}
+    </div>
 
 {% endblock %}
