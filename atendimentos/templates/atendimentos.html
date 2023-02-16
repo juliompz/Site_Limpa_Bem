@@ -3,8 +3,10 @@
 
 {% block content %}
 
+     <h1>Atendimentos</h1>
+
     {% for atendimentos in atendimento %}
-    
+
     <div class="atendimento">
     <p>atendimento CLIENTE: {{ atendimentos.cliente.nome}}</p>
     <p>ATENDENTE: {{atendimentos.atendente}}</p>
@@ -17,5 +19,8 @@
     
     {% endfor%}
     </div>
+
+
+    <a href=""><button type="button" class="btn btn-secondary">Atendimentos do dia</button></a>
 
 {% endblock %}

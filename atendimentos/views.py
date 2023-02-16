@@ -7,8 +7,7 @@ from .models import Atendimento
 from .forms import AtendimentoForm
 
 # Ver atendimentos existentes
-def verAtendimento(request):
-
+def verAtendimentos(request):
     data = {}
     atendimento = Atendimento.objects.all().order_by('id')
 
