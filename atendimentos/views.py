@@ -1,6 +1,10 @@
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
+from django.views import View
+
+from atendimentos.utils import GerarPDF
 
 
 from .models import Atendimento
@@ -15,7 +19,6 @@ def verAtendimentos(request):
         if atend.gerente_desc == 'S':
             atend.valor = atend.valor - (atend.valor * 10/100)
     data['atendimento'] = atendimento
-
 
     return render(request, 'atendimentos.html', data)
 
@@ -54,3 +57,21 @@ def ExcluirAtendimento(request, id):
     atendimento.delete()
     messages.info(request, 'Atendimento deletado com sucesso!')
     return redirect('url_atendimentos')
+
+# Gerar PDF
+
+def AtendimentosRelatorio(request):
+
+    dados = {}
+    atendimentos = Atendimento.objects.all()
+    for atend in atendimentos:
+        if atend.gerente_desc == 'S':
+            atend.valor = atend.valor - (atend.valor * 10/100)
+    dados = {
+        'atendimentos': atendimentos,
+    }
+
+    pdf = GerarPDF()
+
+
+    return pdf.render_to_pdf("relatorioatendimento.html", dados)
