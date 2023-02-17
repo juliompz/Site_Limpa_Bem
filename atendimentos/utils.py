@@ -10,7 +10,6 @@ class GerarPDF:
     def render_to_pdf(self, template_end, context_dict={}):
         template = get_template(template_end)
         html = template.render(context_dict)
-        print(html)
         result = BytesIO()
         try:
             pdf = pisa.pisaDocument(BytesIO(html.encode("")), result)

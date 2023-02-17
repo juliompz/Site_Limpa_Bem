@@ -3,24 +3,32 @@
 
 {% block content %}
 
-     <h1>Atendimentos</h1>
-
-    {% for atendimentos in atendimento %}
-
-    <div class="atendimento">
-    <p>atendimento CLIENTE: {{ atendimentos.cliente.nome}}</p>
-    <p>ATENDENTE: {{atendimentos.atendente}}</p>
-    <p>HELPER: {{atendimentos.helper}}</p>
-    <p>VALOR:{{atendimentos.servico.valor}}</p>
-    <p>Desconto 10%: {{atendimentos.get_gerente_desc_display}}</p>
-    <p>VALOR com desconto:{{atendimentos.valor}}</p>
-    <p>Forma de pagamento: {{ atendimentos.get_formapgto_display }}</p>
-    <p>Situação: {{ atendimentos.get_situacao_display }}</p>
-    
-    {% endfor%}
-    </div>
-
-    <h2>Atendimentos do dia</h2>
+     <div class="title">
+        <h1>Atendimentos</h1>
+     </div>
+<div class="servicos">
+    <div class="row"> 
+        {% for atendimentos in atendimento %}
+        <div class="col-sm-6">
+       
+            <div class="card">
+                <a href="" style="text-decoration: none; color: inherit;">
+                    <div class="card-body" style="text-align: center; border: 1px solid #333;">
+                        <h5 class="card-title">{{ atendimentos.cliente.nome }}</h5>
+                        <h5 class="card-title">R${{ atendimentos.valor }}</h5>
+                        <h5 class="card-title" id="situacao">{{ atendimentos.get_situacao_display }}</h5>
+                        <a href="" class="btn btn-primary btn-lg">Editar</a>
+                    </div>
+                </a>
+            </div>
+        </div>
+         {% endfor%}
+    </div> 
+  
+</div>
+    <div class="atendimentos">
+    <h3>Atendimentos do dia</h3>
     <a href="gerar-pdf/"><button type="button" class="btn btn-secondary">Gerar PDF</button></a>
+    </div>
 
 {% endblock %}

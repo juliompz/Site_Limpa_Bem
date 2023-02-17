@@ -22,3 +22,10 @@ def CadastrarFuncionario(request):
         grupo = Group.objects.get(name ='Helper')
     user.groups.add(grupo)
     return HttpResponse('Login')
+
+def verAtendentes(request):
+
+    data = {}
+    funcionarios = User.objects.all()
+
+    return render(request, 'verAtendentes.html', data)

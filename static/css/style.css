@@ -1,4 +1,85 @@
-.container-fluid {
-
+*{
     padding: 0;
+}
+.container-fluid {
+    padding: 0;
+}
+/* navbar*/
+
+.navbar {
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+}
+
+.navbar-nav {
+    margin: auto;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar-light .navbar-nav a.nav-link {
+    color: #333;
+    letter-spacing: 1px;
+}
+
+
+/* rodapé */
+
+footer {
+    
+    position: fixed;
+    bottom: 0;
+    width: 100%;  
+    background-color: #333;
+    color: #FFFF;
+    margin-top: 20px;
+    height: 100px;
+    left: 0;
+    right: 0;
+    
+}
+
+footer p {
+    color: #FFFF;
+    text-align: center;
+    top: 50%;
+    position: relative;
+}
+
+/*tags no body*/
+
+div.row {
+   
+    margin-left: 10px;
+    padding: 0;
+}
+
+.title h1 {
+    text-align: center;
+    
+}
+
+.col-sm-6 {
+    text-align: center;
+    margin-top: 5%;
+    margin-right: 10%;
+    width: 300px;
+}
+
+.card-body {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #333;
+    border-radius: 25px;
+    border-width: 3px;
+
+}
+
+.atendimentos {
+    text-align: start;
+    padding-top: 50px;
+    margin-left: 10px;
+    margin: 30px;
 }
