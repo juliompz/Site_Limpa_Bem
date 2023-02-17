@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 
 {% block content%}
 
 <form method="POST">
     {% csrf_token %}
-    {{ servicoForm.as_p }}
+    {{ servicoForm|crispy}}
 
     <button type="submit" class="btn btn-success">Salvar</button>
     

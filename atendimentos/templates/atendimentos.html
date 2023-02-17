@@ -10,14 +10,13 @@
     <div class="row"> 
         {% for atendimentos in atendimento %}
         <div class="col-sm-6">
-       
             <div class="card">
                 <a href="" style="text-decoration: none; color: inherit;">
                     <div class="card-body" style="text-align: center; border: 1px solid #333;">
                         <h5 class="card-title">{{ atendimentos.cliente.nome }}</h5>
                         <h5 class="card-title">R${{ atendimentos.valor }}</h5>
                         <h5 class="card-title" id="situacao">{{ atendimentos.get_situacao_display }}</h5>
-                        <a href="" class="btn btn-primary btn-lg">Editar</a>
+                        <a href="{% url 'url_ver-atendimento' atendimentos.id %}" class="btn btn-primary btn-lg">Ver</a>
                     </div>
                 </a>
             </div>

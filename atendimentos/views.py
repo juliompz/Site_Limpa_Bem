@@ -1,5 +1,5 @@
 
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.views import View
@@ -22,6 +22,17 @@ def verAtendimentos(request):
 
     return render(request, 'atendimentos.html', data)
 
+# Ver atendimento específico
+
+def AtendimentoEspecifico(request, id):
+    data = {}
+    atendimento = get_object_or_404(Atendimento, pk=id)
+
+    if atendimento.gerente_desc == 'S':
+        atendimento.valor = atendimento.valor - (atendimento.valor * 10/100)
+    data['atendimento'] = atendimento
+
+    return render(request, 'verAtendimento.html', data)
 # Adicionar novos atendimentos
 
 def AdicionarAtendimento(request):

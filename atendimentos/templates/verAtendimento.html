@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{%block title%}Atendimento nome{% endblock %}
+
+{% block content %}
+
+<div class="title">
+    <h1>Atendimento: {{ atendimento.cliente.nome }}</h1>
+ </div>
+
+ <ul class="list-group">
+    <li class="list-group-item">CLIENTE: <strong>{{atendimento.cliente.nome}}</strong></li>
+    <li class="list-group-item">SERVIÇO PRESTADO: <strong>{{atendimento.servico}}</strong></li>
+    <li class="list-group-item">ATENDENTE: <strong>{{atendimento.atendente}}</strong></li>
+    <li class="list-group-item">HELPER: <strong>{{atendimento.helper}}</strong></li>
+    <li class="list-group-item">DESCONTO 10%: <strong>{{atendimento.get_gerente_desc_display}}</strong></li>
+    <li class="list-group-item">VALOR: <strong>R${{atendimento.valor}}</strong></li>
+    <li class="list-group-item">FORMA PAGAMENTO: <strong>{{atendimento.get_formapgto_display}}</strong></li>
+    <li class="list-group-item">STATUS: <strong>{{atendimento.get_situacao_display}}</strong></li>
+  </ul>
+
+  <a href="{%  url 'url_editar-atendimento' atendimento.id %}"><button type="button" class="btn btn-warning" style="padding: 5px; margin: 10px;">Editar</button></a>
+
+{% endblock %}

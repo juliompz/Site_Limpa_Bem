@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block title %}Novo atendimento{% endblock%}
 
 {%block content%}
 
     <form method="post">
         {% csrf_token %}
-        {{ atendimentoForm.as_p }}
+        {{ atendimentoForm|crispy }}
 
         <button type="submit">Enviar</button>
 
