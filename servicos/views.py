@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 from .models import Servico
 from .forms import ServicoForm
@@ -16,6 +17,8 @@ def verServicos(request):
     return render(request, 'servicos.html', data)
 
 # Adicionar serviços
+@login_required
+@user_passes_test(lambda user: user.is_superuser)
 def AdicionarServico(request):
 
     data = {}
@@ -28,7 +31,8 @@ def AdicionarServico(request):
     return render(request, 'formularioservico.html', data)
 
 #Editar serviço
-
+@login_required
+@user_passes_test(lambda user: user.is_superuser)
 def EditarServico(request, id):
 
     data = {}
@@ -43,6 +47,8 @@ def EditarServico(request, id):
 
 
 # Excluir Serviços
+@login_required
+@user_passes_test(lambda user: user.is_superuser)
 def ExcluirServico(request, id):
 
     servico = Servico.objects.get(pk = id)
