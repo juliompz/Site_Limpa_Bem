@@ -1,7 +1,11 @@
 from django.shortcuts import render, HttpResponse
 from django.contrib.auth.models import User, Group
+from atendimentos.models import Atendimento
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 
+@login_required
+@user_passes_test(lambda user: user.is_superuser)
 def CadastrarFuncionario(request):
     if request.method == 'GET':
         return render(request, 'registration/register.html')
@@ -23,9 +27,32 @@ def CadastrarFuncionario(request):
     user.groups.add(grupo)
     return HttpResponse('Login')
 
+#Ver atendentes
 def verAtendentes(request):
-
-    data = {}
-    funcionarios = User.objects.all()
-
+    grupo = Group.objects.get(name='Atendente')
+    atendentes = []
+    for user in grupo.user_set.all():
+        atendimentos = Atendimento.objects.filter(atendente=user)
+        atendentes.append({
+            'user': user,
+            'atendimentos': atendimentos
+        })
+    data = {
+        'atendentes': atendentes,
+    }
     return render(request, 'verAtendentes.html', data)
+
+#Ver helpers
+def verHelpers(request):
+    grupo = Group.objects.get(name='Helper')
+    helpers = []
+    for user in grupo.user_set.all():
+        atendimentos = Atendimento.objects.filter(helper=user)
+        helpers.append({
+            'user': user,
+            'atendimentos': atendimentos
+        })
+    data = {
+        'helpers': helpers,
+    }
+    return render(request, 'verHelpers.html', data)

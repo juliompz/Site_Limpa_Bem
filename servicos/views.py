@@ -57,5 +57,8 @@ def ExcluirServico(request, id):
 
     return redirect('url_servico')
 
+def ComprarServico(request):
+    return render(request, 'comprar.html')
+
 
 

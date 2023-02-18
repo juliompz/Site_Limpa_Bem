@@ -19,7 +19,7 @@
                       <h5 class="card-title">{{ servicos.nome }}</h5>
                       <p class="card-text">{{ servicos.descricao }}</p>
                       <h5 class="card-title">R${{ servicos.valor }}</h5>
-                      <a href="#" class="btn btn-primary btn-lg">Comprar</a>
+                      <a href="{% url 'url_comprar-servico' %}" class="btn btn-primary btn-lg">Comprar</a>
                   </div>
                 </a>
               </div>

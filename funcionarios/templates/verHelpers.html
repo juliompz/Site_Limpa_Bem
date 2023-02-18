@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Funcionários{% endblock %}
+
+{%block content %}
+{% if helpers %}
+
+<h1 class="title">Helpers</h1>
+
+<div class="servicos">
+    <div class="row">
+        {% for helper in helpers %}
+        <div class="col-sm-6">
+            <div class="card">           
+                <div class="card-body">
+                    <h5 class="card-title">{{ helper.user.username }}</h5>
+                    {% if helper.atendimentos %}                  
+                    {% for atendimento in helper.atendimentos %}
+                    <h5 class="card-title">{{ atendimento.cliente.nome }} - {{ atendimento.data_atendimento }}</h5>   
+                    <br>         
+                    {% endfor %}
+                    {% endif %}  
+                </div>
+              </a>
+            </div>     
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endif %}
+{% endblock %}

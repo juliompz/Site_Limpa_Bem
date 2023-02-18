@@ -1,9 +1,12 @@
 
+from datetime import datetime
+from django.utils import timezone
 from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.views import View
 from django.contrib.auth.decorators import login_required
+import pytz
 
 from atendimentos.utils import GerarPDF
 
@@ -76,15 +79,14 @@ def ExcluirAtendimento(request, id):
 def AtendimentosRelatorio(request):
 
     dados = {}
-    atendimentos = Atendimento.objects.all()
-    for atend in atendimentos:
+    atendimento = Atendimento.objects.all()#.filter(data_atendimento=data)
+    for atend in atendimento:
         if atend.gerente_desc == 'S':
             atend.valor = atend.valor - (atend.valor * 10/100)
     dados = {
-        'atendimentos': atendimentos,
+        'atendimento': atendimento,
     }
-
     pdf = GerarPDF()
-
-
+    print(atendimento.query)
+    
     return pdf.render_to_pdf("relatorioatendimento.html", dados)

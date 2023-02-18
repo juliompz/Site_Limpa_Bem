@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Funcionários{% endblock %}
+
+{%block content %}
+{% if atendentes %}
+
+<h1 class="title">Atendentes</h1>
+
+<div class="servicos">
+    <div class="row">
+        {% for atendente in atendentes %}
+        
+        <div class="col-sm-6">
+            <div class="card">           
+                <div class="card-body">
+                    <h5 class="card-title">{{ atendente.user.username }}</h5>
+                    {% if atendente.atendimentos %}                  
+                    {% for atendimento in atendente.atendimentos %}
+                    <h5 class="card-title">{{ atendimento.cliente.nome }} - {{ atendimento.data_atendimento }}</h5>   
+                     
+                    <br>         
+                    {% endfor %}
+                    {% endif %}  
+                </div>
+              </a>
+            </div>     
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endif %}
+{% endblock %}

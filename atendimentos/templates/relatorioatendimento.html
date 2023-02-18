@@ -5,24 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Relatorio PDF</title>
 </head>
 <body>
     
+    {% for atendimentos in atendimento %}
     
-    <h1>RELATORIO ATENDIMENTOS DO DIA</h1>
-
-    {% for atendimento in atendimentos %}
-
-    <p>atendimento CLIENTE: {{ atendimento.cliente.nome|safe }}</p>
-    <p>ATENDENTE: {{atendimento.atendente|safe}}</p>
-    <p>HELPER: {{atendimento.helper|safe}}</p>
-    <p>VALOR:{{atendimento.servico.valor|safe}}</p>
-    <p>Desconto 10%: {{atendimento.get_gerente_desc_display|safe}}</p>
-    <p>VALOR com desconto:{{atendimento.valor|safe}}</p>
-    <p>Forma de pagamento: {{ atendimento.get_formapgto_display|safe }}</p>
-    <p>Situação: {{ atendimento.get_situacao_display|safe }}</p>
-
+    <div class="title">
+        <h1>Atendimento: {{ atendimentos.cliente.nome }}</h1>
+     </div>
+    
+     <ul class="list-group">
+        <li class="list-group-item">CLIENTE: <strong>{{ atendimentos.cliente.nome }}</strong></li>
+        <li class="list-group-item">SERVIÇO PRESTADO: <strong>{{ atendimentos.servico }}</strong></li>
+        <li class="list-group-item">ATENDENTE: <strong>{{ atendimentos.atendente }}</strong></li>
+        <li class="list-group-item">HELPER: <strong>{{ atendimentos.helper }}</strong></li>
+        <li class="list-group-item">DESCONTO 10%: <strong>{{ atendimentos.get_gerente_desc_display }}</strong></li>
+        <li class="list-group-item">VALOR: <strong>R${{ atendimentos.valor }}</strong></li>
+        <li class="list-group-item">FORMA PAGAMENTO: <strong>{{ atendimentos.get_formapgto_display }}</strong></li>
+        <li class="list-group-item">STATUS: <strong>{{ atendimentos.get_situacao_display }}</strong></li>
+      </ul>
     {% endfor %}
 
 </body>
