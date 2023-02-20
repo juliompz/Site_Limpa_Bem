@@ -8,7 +8,7 @@
 <p>3 – Abrir o arquivo na IDE ( IDE utilizada = Visual Studio Code )</p>
 <p> abra o terminal e digite: python manage.py runserver </p>
 
-Por favor, verificar o relatório que enviei em PDF no email.
+<h1>Por favor, verificar o relatório que enviei em PDF no email.</h1>
 
 
 obs, caso precise: 
