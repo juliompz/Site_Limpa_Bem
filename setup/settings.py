@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'servicos',
     'atendimentos',
     'clientes',
-    'estilizacao',
+    'Estilizacao',
     'funcionarios',
     'crispy_forms',
     'crispy_bootstrap5'

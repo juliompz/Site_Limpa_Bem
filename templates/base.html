@@ -23,14 +23,13 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'landing-page' %}">Home</a>
                   </li>
-                  {% if request.user.is_superuser %}
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'url_servico' %}">Serviços</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'url_atendimentos' %}">Atendimentos</a>
-                  {% endif %}
                   </li>
+                {% if request.user.is_superuser %}
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Funcionarios
@@ -38,9 +37,8 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li><a class="dropdown-item" href="{% url 'url_ver-atendentes' %}">Atendentes</a></li>
                       <li><a class="dropdown-item" href="{% url 'url_ver-helpers' %}">Helpers</a></li>
-                      {% if request.user.is_superuser %}
                       <li><a class="dropdown-item" href="{% url 'url_cadastro' %}">Cadastrar Funcionario</a></li>
-                      {% endif %}
+                {% endif %}
                     </ul>
                   </li>
               </div>
@@ -61,15 +59,11 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'url_servico' %}">Serviços</a>
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Funcionarios
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="{% url 'url_ver-atendentes' %}">Atendentes</a></li>
-                      <li><a class="dropdown-item" href="#">Helpers</a></li>
-                    </ul>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'url_comprar-servico' %}">Contato</a>
                   </li>
+
               </div>
             </div>
           </nav>
