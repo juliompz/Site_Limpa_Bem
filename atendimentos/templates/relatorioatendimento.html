@@ -8,6 +8,10 @@
     <title>Relatorio PDF</title>
 </head>
 <body>
+    {% if atendimento %}
+    <h1>Limpa Bem</h1>
+    <h3>Relatorio, atendimentos do dia: {{ data_atual }}</h3>
+
     
     {% for atendimentos in atendimento %}
     
@@ -26,7 +30,7 @@
         <li class="list-group-item">STATUS: <strong>{{ atendimentos.get_situacao_display }}</strong></li>
       </ul>
     {% endfor %}
-
+    {% endif %}
 </body>
 </html>
 

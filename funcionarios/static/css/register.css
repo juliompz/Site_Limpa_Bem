@@ -13,7 +13,7 @@
 body{
     line-height: 1;
     min-height: 85vh;
-    background: linear-gradient(0deg, #650374 10%, #082367 85.61%);
+    background: #333;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -23,7 +23,7 @@ body{
 .tela{
     background-color:  white;
     width: 430px;
-    height: 520px;  
+    height: 560px;  
     margin-left:auto;
     margin-right: auto;
     padding: 20px 20px;

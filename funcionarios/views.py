@@ -1,7 +1,9 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User, Group
 from atendimentos.models import Atendimento
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib import messages
+
 
 
 @login_required
@@ -16,7 +18,11 @@ def CadastrarFuncionario(request):
         cargo = request.POST.get('cargo', None)
         user = User.objects.filter(username=usuario).first()
         if user:
-            return HttpResponse('Ja existe um usuario com esse nome')
+            messages.error(request, 'Já existe um usuário com esse nome')
+            data = {
+                'exibir_mensagem': True,
+                'mensagem': 'Já existe um usuário com esse nome'}
+            return render(request, 'registration/register.html', data)
     
     user = User.objects.create_user(username=usuario, email=email, password=senha)
     user.save()
@@ -25,7 +31,7 @@ def CadastrarFuncionario(request):
     elif cargo == str('Helper'):
         grupo = Group.objects.get(name ='Helper')
     user.groups.add(grupo)
-    return HttpResponse('Login')
+    return redirect('url_servico')
 
 #Ver atendentes
 def verAtendentes(request):

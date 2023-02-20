@@ -6,4 +6,4 @@ class AtendimentoForm(forms.ModelForm):
 
     class Meta:
         model = Atendimento
-        fields = ['servico', 'atendente', 'helper' , 'formapgto', 'gerente_desc', 'situacao', 'data_agendada']
+        fields = ['servico', 'atendente', 'helper' , 'formapgto', 'gerente_desc', 'situacao','cliente', 'data_agendada']

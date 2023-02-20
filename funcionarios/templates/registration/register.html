@@ -16,7 +16,7 @@
             <div class ="tela">
             <div class = "form">
         
-        <span class="title">Register</span>
+        <span class="title">Cadastrar</span>
 
 
         <div class = usuario>    
@@ -30,8 +30,16 @@
         </div>
 
 
-        <div class = usuario>    
+        <div class = usuario>
+
             <label for="usuario"><h2>Usuário</h2></label>
+            {% if exibir_mensagem %}
+            <div class="alert alert-warning d-flex align-items-center" role="alert">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                <div>
+                    {{ mensagem }}
+                </div>
+            {% endif %}  
             <input id = "usuario" type="text" name="usuario" placeholder="digite seu nome de usuario" autocomplete="False">
             
         </div>   

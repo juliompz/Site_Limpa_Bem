@@ -13,5 +13,6 @@ class GerarPDF:
         result = BytesIO()
         pdf = pisa.pisaDocument(BytesIO(html.encode("UTF-8")), result)
         if not pdf.err:
-            return HttpResponse(result.getvalue(), content_type='application/pdf')
-        return None
+            response = HttpResponse(result.getvalue(), content_type='application/pdf')
+            response['Content-Disposition'] = 'attachment; filename="relatorio.pdf"'
+        return response

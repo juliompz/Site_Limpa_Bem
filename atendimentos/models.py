@@ -56,7 +56,7 @@ class Atendimento(models.Model):
         super().save()
 
 
-    data_atendimento = models.DateTimeField(auto_now_add = True)
+    data_atendimento = models.DateTimeField(auto_now_add= True)
     data_agendada = models.DateTimeField(auto_now_add = False, 
                                         blank= False, null= False)
 

@@ -15,7 +15,13 @@
                     <div class="card-body" style="text-align: center; border: 1px solid #333;">
                         <h5 class="card-title">{{ atendimentos.cliente.nome }}</h5>
                         <h5 class="card-title">R${{ atendimentos.valor }}</h5>
-                        <h5 class="card-title" id="situacao">{{ atendimentos.get_situacao_display }}</h5>
+                        {% if atendimentos.situacao == 'P' %}  
+                        <h5 class="card-title" style="background-color: #e8d61a;">{{ atendimentos.get_situacao_display }}</h5>
+                        {% elif atendimentos.situacao == 'R' %}
+                        <h5 class="card-title" style="background-color: #48dd48;">{{ atendimentos.get_situacao_display }}</h5>
+                        {% else %}
+                        <h5 class="card-title" style="background-color: #fb0303;">{{ atendimentos.get_situacao_display }}</h5>
+                        {% endif %}
                         <a href="{% url 'url_ver-atendimento' atendimentos.id %}" class="btn btn-primary btn-lg">Ver</a>
                     </div>
                 </a>
@@ -28,6 +34,7 @@
     <div class="atendimentos">
     <h3>Atendimentos do dia</h3>
     <a href="gerar-pdf/"><button type="button" class="btn btn-secondary">Gerar PDF</button></a>
+    <a href="{% url 'url_adicionar-atendimentos' %}"><button type="button" class="btn btn-secondary">Adicionar Atendimento</button></a>
     </div>
 
 {% endblock %}

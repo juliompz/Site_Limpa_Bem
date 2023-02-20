@@ -8,38 +8,38 @@
     <link href="{% static 'css/landing.css' %}" rel="stylesheet">
     <link href="{% static 'css/fonts.css' %}" rel="stylesheet">
     <link href="{% static 'css/media.css' %}" rel="stylesheet">
-    <title>Landing Page</title>
+    <title>Limpa Bem</title>
 </head>
 <body>
     <header>
         <div id="title">
-            <h1>Marketing</h1>
-            <h1>Criativo</h1>
+            <h1>Limpa</h1>
+            <h1>Bem</h1>
         </div>
 
         <ul>
-            <a href="#"><li>Início</li></a>
+            <a href="/"><li>Início</li></a>
             <a href="{% url 'url_servico' %}"><li>Serviços</li></a>
-            <a href="#"><li>Sobre</li></a>
-            <a href="#"><li>Contato</li></a>
-            <a href="#" id="inscreva-se-btn"><li>Já tem uma conta?</li></a>
+            <a href="{% url 'url_comprar-servico' %}"><li>Contato</li></a>
         </ul>
     </header>
 
     <main>
         <aside>
-            <h2><span>Inscreva-se agora</span></h2>
-            <h2>na Newslatter</h2>
+            <h2><span>Limpe e organize</span></h2>
+            <h2>sua casa.</h2>
             <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                Somos uma empresa especializada em limpeza... de TUDO. Entre em contato conosco e converse com um atendente.
             </p>
+            <a href="{% url 'url_comprar-servico' %}"><button type="button" class="contato">Contato</button></a>
 
         </aside>
 
         <article>
-            <img src="{% static 'img/foto.png' %}" alt="mulher-roxa">
+            <img src="{% static 'img/fot.jpg' %}" alt="limpeza">
         </article>
     </main>
     
+
 </body>
 </html>
