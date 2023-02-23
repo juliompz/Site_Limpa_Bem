@@ -10,6 +10,8 @@
 
 <h1>Por favor, verificar o relatório que enviei em PDF no email.</h1>
 
+<p> Entrar como admin = usuario: gerente</p>
+<p>senha = admin</p>
 
 obs, caso precise: 
 <p> Instalar o arquivo requeriments.txt, onde estão todas dependências utilizadas no projeto ( pip install -r requeriments.txt )</p>
