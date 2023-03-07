@@ -1,11 +1,16 @@
 # Site_Limpa_Bem
 
-Um site para contratação de serviços de limpeza, projeto focado no BACK-END com Python e Django Framework.
-Site com foco no back-end, possui diversas aplicações como geração de PDF com andimentos do dia, visualização dos atendentes e seus atendimentos... entre outros.
-Utilizei Python com Django, HTML, CSS e JS.(BOOTSTRAP)
-Utilizei o método Kanban.
-Relatório da criação: https://drive.google.com/file/d/1aoUKh823Dj_wXBu6IEikz-OG-dPmOHK1/view?usp=share_link
-
+<p>Um site para contratação de serviços de limpeza, projeto focado no BACK-END com Python e Django Framework.
+</p>
+<p>Site com foco no back-end, possui diversas aplicações como geração de PDF com andimentos do dia, visualização dos atendentes e seus atendimentos... entre outros.
+</p>
+<p>Utilizei Python com Django, HTML, CSS e JS.(BOOTSTRAP)
+</p>
+<p>Utilizei o método Kanban.
+</p>
+<p>Fiz a UML do projeto</p>
+<p>Relatório da criação: https://drive.google.com/file/d/1aoUKh823Dj_wXBu6IEikz-OG-dPmOHK1/view?usp=share_link
+</p>
 
 
 
